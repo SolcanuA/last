@@ -1,0 +1,316 @@
+/* Resetare stiluri pentru a evita conflictele între browsere */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Fondul paginii și stiluri generale */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2e3b4e; /* Fundal întunecat */
+    color: #ecf0f1; /* Text deschis la culoare */
+    padding: 20px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Stiluri pentru titluri */
+  h1, h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+  }
+
+  /* Animare pentru titluri */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .titlu{
+    color:#fff;
+  }
+  /* Stiluri pentru formular */
+  form {
+    background-color: #34495e; /* Fundal mai închis pentru formular */
+    padding: 20px;
+    border-radius: 8px;
+
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: slideUp 0.8s ease-out;
+  }
+
+  /* Animație pentru formular */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ecf0f1;
+  }
+
+  input[type="file"] {
+    border: 2px solid #7f8c8d;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #34495e;
+    color: #ecf0f1;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="file"]:focus {
+    border-color: #3498db;
+  }
+
+  button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Mică animație de zoom la hover */
+  }
+
+  /* Stiluri pentru lista de fișiere */
+  h2 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    animation: fadeIn 1s ease-out;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  li {
+    background-color: #34495e;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeInLi 1s ease-out forwards;
+  }
+
+  @keyframes fadeInLi {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+  }
+
+  /* Responsivitate pentru dispozitive mobile */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    ul {
+      width: 100%;
+    }
+  }
+
+
+
+
+
+
+  .login-box h1 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .login-box .user-box {
+    position: relative;
+  }
+
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+
+  .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 0px;
+    letter-spacing: 4px
+  }
+
+  .login-box a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+
+  .login-box a span {
+    position: absolute;
+    display: block;
+  }
+
+  .login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+
+  .login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+
+  .login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+
+  .login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }

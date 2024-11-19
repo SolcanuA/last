@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Server</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h1,
+      h2 {
+        color: #ffffff;
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin: 5px 0;
+      }
+    </style>
+  <!DOCTYPE html>
+  
+  </head>
+  <body>
+    <h1>File Server</h1>
+    <div class="login-box">
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Choose a file:</label
+        ><a
+          ><span></span>
+          <span></span>
+          <span></span>
+          <input type="file" name="file" id="file" required
+        /></a>
+        <button type="submit">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>Upload
+        </button>
+      </form>
+    </div>
+    <h2>Available Files:</h2>
+    <ul id="file-list">
+      <!-- Lista fișierelor va fi încărcată automat -->
+    </ul>
+    <script>
+      async function loadFiles() {
+        const response = await fetch("/files");
+        const files = await response.json();
+        const fileList = document.getElementById("file-list");
+        files.forEach((file) => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `/files/${file}`;
+          a.textContent = file;
+          a.download = file;
+          li.appendChild(a);
+          fileList.appendChild(li);
+        });
+      }
+      loadFiles();
+    </script>
+  </body>
+</html>
